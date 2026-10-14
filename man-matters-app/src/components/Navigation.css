@@ -8,7 +8,7 @@
   max-width: 1400px;
   z-index: 1000;
   border-radius: var(--radius-xl);
-  background: rgba(255, 253, 248, 0.78);
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: var(--border-standard);
@@ -18,7 +18,7 @@
 .main-nav--scrolled {
   top: 8px;
   box-shadow: var(--shadow-card);
-  background: rgba(255, 253, 248, 0.94);
+  background: rgba(255, 255, 255, 0.94);
 }
 .nav-inner {
   display: flex;

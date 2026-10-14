@@ -10,6 +10,9 @@ import { categoryOptions, FAQ_ITEMS } from '../config/guidance';
 import { getCategoryIcon, IconCheck, IconEdit, IconShield, IconLock, IconArrowRight, IconExternalLink, IconPlus } from '../components/Icons';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import heroEditorial from '../assets/hero-editorial-v2.webp';
+import walkthroughProductReference from '../assets/walkthrough-product-reference.webp';
+import walkthroughDeliveryReference from '../assets/walkthrough-delivery-reference.webp';
+import walkthroughPackagingReference from '../assets/walkthrough-packaging-reference.webp';
 import './LandingPage.css';
 
 export function LandingPage() {
@@ -89,6 +92,12 @@ function HeroSection({ onCTA }: { onCTA: () => void }) {
           <p className="hero-qualifier">
             Independent fellowship prototype · Not official support or medical advice.
           </p>
+
+          <div className="hero-proof" aria-label="Key service details">
+            <span><b>03</b> simple steps</span>
+            <span><b>3–5</b> minutes</span>
+            <span><b>0</b> messages sent</span>
+          </div>
         </div>
 
         <div className="hero-preview">
@@ -220,7 +229,7 @@ function ThreeStepProcess() {
       <div className="container">
         <p className="eyebrow reveal" style={{ textAlign: 'center', marginBottom: '16px' }}>How it works</p>
         <h2 id="process-heading" className="h2 reveal stagger-2" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
-          Three steps to a clearer question
+          A small field guide for a clearer question
         </h2>
         <div className="process-grid">
           {steps.map((step, i) => (
@@ -258,6 +267,9 @@ function ProductWalkthrough() {
       description: 'I noticed increased shedding after 3 weeks of daily use on the recommended areas.',
       question: 'Is this expected during the initial period, and should I continue?',
       route: 'Consult a qualified professional',
+      image: walkthroughProductReference,
+      imageAlt: 'An unbranded amber bottle beside a notebook and pen in warm window light.',
+      photoMeta: 'A moment to make a note',
     },
     {
       category: 'Delivery concern',
@@ -265,6 +277,9 @@ function ProductWalkthrough() {
       description: 'My order placed 12 days ago still shows "processing" with no tracking update.',
       question: 'Can you provide an updated delivery estimate or tracking number?',
       route: 'Order and delivery support',
+      image: walkthroughDeliveryReference,
+      imageAlt: 'A plain parcel on a wooden bench by an apartment door.',
+      photoMeta: 'A delivery detail worth keeping',
     },
     {
       category: 'Packaging concern',
@@ -272,6 +287,9 @@ function ProductWalkthrough() {
       description: 'The seal on the bottle was broken when I received it, and only 28 of 30 tablets are inside.',
       question: 'Can I get a replacement for this package?',
       route: 'Packaging or quantity concern support',
+      image: walkthroughPackagingReference,
+      imageAlt: 'An unbranded open parcel with an amber bottle and packing paper.',
+      photoMeta: 'Keep the facts in view',
     },
   ];
 
@@ -306,23 +324,32 @@ function ProductWalkthrough() {
         </div>
 
         <div className="walkthrough-content reveal-scale stagger-4" role="tabpanel">
-          <span className="chip chip-warning" style={{ marginBottom: '16px' }}>Fictional example</span>
-          <div
-            key={animKey}
-            className={`walkthrough-card walkthrough-slide-${slideDir}`}
-          >
-            {[
-              { label: 'Category', value: examples[activeTab].category },
-              { label: 'Product', value: examples[activeTab].product },
-              { label: 'What happened', value: examples[activeTab].description },
-              { label: 'Question', value: examples[activeTab].question, bold: true },
-              { label: 'Suggested route', value: examples[activeTab].route, isRoute: true },
-            ].map((row, i) => (
-              <div key={i} className={`walkthrough-card-row ${row.isRoute ? 'walkthrough-card-route' : ''}`}>
-                <span className="mono walkthrough-label">{row.label}</span>
-                <span style={row.bold ? { fontWeight: 500 } : undefined}>{row.value}</span>
+          <div key={animKey} className={`walkthrough-stage walkthrough-slide-${slideDir}`}>
+            <figure className="walkthrough-reference">
+              <img src={examples[activeTab].image} alt={examples[activeTab].imageAlt} />
+              <figcaption>
+                <span className="mono">Reference scene</span>
+                <span>{examples[activeTab].photoMeta}</span>
+              </figcaption>
+            </figure>
+
+            <div className="walkthrough-detail">
+              <span className="chip chip-warning" style={{ marginBottom: '16px' }}>Fictional example</span>
+              <div className="walkthrough-card">
+                {[
+                  { label: 'Category', value: examples[activeTab].category },
+                  { label: 'Product', value: examples[activeTab].product },
+                  { label: 'What happened', value: examples[activeTab].description },
+                  { label: 'Question', value: examples[activeTab].question, bold: true },
+                  { label: 'Suggested route', value: examples[activeTab].route, isRoute: true },
+                ].map((row, i) => (
+                  <div key={i} className={`walkthrough-card-row ${row.isRoute ? 'walkthrough-card-route' : ''}`}>
+                    <span className="mono walkthrough-label">{row.label}</span>
+                    <span style={row.bold ? { fontWeight: 500 } : undefined}>{row.value}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
@@ -341,8 +368,11 @@ function CategoryCards({ onSelect }: { onSelect: () => void }) {
       <div className="container">
         <p className="eyebrow reveal" style={{ textAlign: 'center', marginBottom: '16px' }}>Concern categories</p>
         <h2 id="categories-heading" className="h2 reveal stagger-2" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
-          Choose what fits your situation
+          Start with the concern you recognise
         </h2>
+        <p className="categories-intro reveal stagger-3">
+          The guided form adapts to each situation, while keeping every decision in your hands.
+        </p>
         <div className="category-grid">
           {categoryOptions.map((cat, i) => (
             <CategoryCardItem key={cat.code} cat={cat} index={i} />
@@ -425,11 +455,18 @@ function PrivacySection() {
   return (
     <section className="privacy-home section" aria-labelledby="privacy-heading" ref={ref as any}>
       <div className="container container-reading">
-        <div className="card card-feature reveal-scale" style={{ background: 'var(--surface)', padding: '48px 40px', textAlign: 'center' }}>
-          <IconLock size={40} color="var(--forest)" aria-hidden="true" />
-          <h2 id="privacy-heading" className="h2" style={{ marginTop: '24px' }}>
-            Your information stays in this session
-          </h2>
+        <div className="privacy-note reveal-scale">
+          <div className="privacy-note-lead">
+            <span className="privacy-note-index mono" aria-hidden="true">/ 01</span>
+            <p className="eyebrow" style={{ marginTop: '20px' }}>Private by default</p>
+            <IconLock size={40} color="var(--forest)" aria-hidden="true" style={{ marginTop: '24px' }} />
+            <h2 id="privacy-heading" className="h2" style={{ marginTop: '24px' }}>
+              Your information stays in this session
+            </h2>
+            <p className="privacy-note-copy">
+              This is a place to prepare, not a system that follows you around.
+            </p>
+          </div>
           <div className="privacy-items">
             {items.map((text, i) => (
               <div key={i} className={`privacy-item reveal stagger-${Math.min(i + 1, 6)}`}>
@@ -453,6 +490,7 @@ function SafetySection() {
     <section className="safety-home section" style={{ background: 'var(--canvas-soft)' }} aria-labelledby="safety-heading" ref={ref as any}>
       <div className="container container-reading">
         <div className="card-safety reveal-scale" style={{ padding: '40px', textAlign: 'center' }}>
+          <p className="eyebrow" style={{ marginBottom: '18px', color: 'var(--warning)' }}>Safety boundary</p>
           <IconShield size={40} color="var(--warning)" aria-hidden="true" />
           <h2 id="safety-heading" className="h3" style={{ marginTop: '20px', color: 'var(--warning)' }}>
             This tool organizes questions. It does not answer medical questions.
@@ -536,7 +574,7 @@ function FinalCTA({ onCTA }: { onCTA: () => void }) {
           <span className="serif">Leave with a clearer question,</span>{' '}
           not another open tab.
         </h2>
-        <p className="lead reveal stagger-2" style={{ color: 'rgba(251,248,242,0.7)', marginTop: '20px' }}>
+        <p className="lead reveal stagger-2" style={{ color: 'rgba(255,255,255,0.7)', marginTop: '20px' }}>
           About 3–5 minutes. No account required.
         </p>
         <div className="reveal stagger-3" style={{ marginTop: '32px' }}>
@@ -544,7 +582,7 @@ function FinalCTA({ onCTA }: { onCTA: () => void }) {
             Prepare my question <IconArrowRight size={18} />
           </button>
         </div>
-        <p className="reveal stagger-4" style={{ marginTop: '20px', fontSize: '0.8rem', color: 'rgba(251,248,242,0.5)' }}>
+        <p className="reveal stagger-4" style={{ marginTop: '20px', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
           Independent fellowship prototype. Not official Man Matters support or medical advice.
         </p>
       </div>

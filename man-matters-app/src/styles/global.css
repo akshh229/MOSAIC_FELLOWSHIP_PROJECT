@@ -1,7 +1,7 @@
 /* ============================================================
    MAN MATTERS NEXT STEP — GLOBAL STYLES
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import './tokens.css';
 
 /* ─── Reset & Base ─── */
@@ -29,8 +29,7 @@ body {
   line-height: var(--lh-body);
   color: var(--ink);
   background-color: var(--canvas);
-  background-image: var(--dot-grid);
-  background-size: var(--dot-size) var(--dot-size);
+  background-image: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

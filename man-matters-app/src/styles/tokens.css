@@ -5,19 +5,19 @@
 
 :root {
   /* ─── Core Palette ─── */
-  --canvas: #f0ede4;
-  --canvas-soft: #fbf8f1;
-  --surface: #fffdf8;
-  --surface-sage: #dbe0c6;
-  --surface-sand: #f0c99e;
-  --surface-blue: #d5e1e0;
+  --canvas: #f6f6f4;
+  --canvas-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-sage: #dfe0c9;
+  --surface-sand: #f2dfbd;
+  --surface-blue: #dce7e4;
   --ink: #1e211d;
   --ink-muted: #68675d;
   --forest: #2e4537;
   --forest-hover: #1f3328;
   --sage: #77855e;
   --gold: #d6663d;
-  --line: #d8d1c5;
+  --line: #d3d2cc;
   --focus: #98452c;
   --info: #356b71;
   --warning: #8a4d20;
@@ -27,19 +27,19 @@
   --success: #3d6546;
 
   /* ─── Category Accents ─── */
-  --cat-product-bg: #E8F0EA;
-  --cat-product-accent: #39634F;
-  --cat-delivery-bg: #E5EEF3;
-  --cat-delivery-accent: #35677E;
-  --cat-packaging-bg: #EFE2C8;
-  --cat-packaging-accent: #8A6331;
-  --cat-consultation-bg: #E9E6F3;
-  --cat-consultation-accent: #66598A;
-  --cat-other-bg: #EEEDE8;
-  --cat-other-accent: #60655F;
+  --cat-product-bg: #dfe0c9;
+  --cat-product-accent: #405839;
+  --cat-delivery-bg: #d9e9ff;
+  --cat-delivery-accent: #315f83;
+  --cat-packaging-bg: #f2dfbd;
+  --cat-packaging-accent: #825638;
+  --cat-consultation-bg: #e2dce5;
+  --cat-consultation-accent: #665276;
+  --cat-other-bg: #eee9df;
+  --cat-other-accent: #5f6259;
 
   /* ─── Typography ─── */
-  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
   --font-sans: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, monospace;
 
@@ -109,7 +109,7 @@
   --border-dash-strong: 1px dashed rgba(24, 32, 28, 0.25);
 
   /* ─── Paper Texture ─── */
-  --dot-grid: radial-gradient(circle, rgba(24, 32, 28, 0.06) 1px, transparent 1px);
+  --dot-grid: none;
   --dot-size: 22px;
 
   /* ─── 3D Perspective ─── */
