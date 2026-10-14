@@ -163,9 +163,8 @@ function ProblemNarrative() {
   return (
     <section className="problem section" style={{ background: 'var(--canvas-soft)' }} ref={ref as any}>
       <div className="container container-reading">
-        <h2 className="h2 problem-title reveal">
-          <span className="serif">When the answer is unclear,</span>{' '}
-          the next message should not be.
+        <h2 className="h2 problem-title editorial-title reveal">
+          When the answer is unclear, <span className="serif">the next message</span> should not be.
         </h2>
         <p className="lead reveal stagger-2" style={{ marginTop: '24px', color: 'var(--ink-muted)' }}>
           Sometimes a support interaction ends without a clear answer.
@@ -228,8 +227,8 @@ function ThreeStepProcess() {
     <section className="process section" id="how-it-works" aria-labelledby="process-heading" ref={ref as any}>
       <div className="container">
         <p className="eyebrow reveal" style={{ textAlign: 'center', marginBottom: '16px' }}>How it works</p>
-        <h2 id="process-heading" className="h2 reveal stagger-2" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
-          A small field guide for a clearer question
+        <h2 id="process-heading" className="h2 process-title reveal stagger-2" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto' }}>
+          A small <span className="serif">field guide</span> for a clearer question
         </h2>
         <div className="process-grid">
           {steps.map((step, i) => (
@@ -305,8 +304,8 @@ function ProductWalkthrough() {
         <p className="eyebrow reveal" style={{ textAlign: 'center', marginBottom: '16px', color: 'var(--gold)' }}>
           See it in action
         </p>
-        <h2 id="walkthrough-heading" className="h2 reveal stagger-2" style={{ textAlign: 'center', color: 'var(--canvas-soft)', maxWidth: '700px', margin: '0 auto' }}>
-          From scattered concern to structured question
+        <h2 id="walkthrough-heading" className="h2 walkthrough-title reveal stagger-2" style={{ textAlign: 'center', color: 'var(--canvas-soft)', maxWidth: '700px', margin: '0 auto' }}>
+          From scattered concern to <span className="serif">structured question</span>
         </h2>
 
         <div className="walkthrough-tabs reveal stagger-3" role="tablist" aria-label="Example categories">
@@ -367,8 +366,8 @@ function CategoryCards({ onSelect }: { onSelect: () => void }) {
     <section className="categories section" style={{ background: 'var(--canvas-soft)' }} aria-labelledby="categories-heading" ref={ref as any}>
       <div className="container">
         <p className="eyebrow reveal" style={{ textAlign: 'center', marginBottom: '16px' }}>Concern categories</p>
-        <h2 id="categories-heading" className="h2 reveal stagger-2" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
-          Start with the concern you recognise
+        <h2 id="categories-heading" className="h2 categories-title reveal stagger-2" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
+          Start with the concern you <span className="serif">recognise</span>
         </h2>
         <p className="categories-intro reveal stagger-3">
           The guided form adapts to each situation, while keeping every decision in your hands.
@@ -454,14 +453,15 @@ function PrivacySection() {
 
   return (
     <section className="privacy-home section" aria-labelledby="privacy-heading" ref={ref as any}>
-      <div className="container container-reading">
+      <div className="container privacy-container">
         <div className="privacy-note reveal-scale">
           <div className="privacy-note-lead">
             <span className="privacy-note-index mono" aria-hidden="true">/ 01</span>
             <p className="eyebrow" style={{ marginTop: '20px' }}>Private by default</p>
             <IconLock size={40} color="var(--forest)" aria-hidden="true" style={{ marginTop: '24px' }} />
-            <h2 id="privacy-heading" className="h2" style={{ marginTop: '24px' }}>
-              Your information stays in this session
+            <h2 id="privacy-heading" className="h2 privacy-note-title" style={{ marginTop: '24px' }}>
+              <span className="privacy-title-line">Your information</span>
+              <span className="privacy-title-line">stays <span className="serif">in this session</span></span>
             </h2>
             <p className="privacy-note-copy">
               This is a place to prepare, not a system that follows you around.
@@ -488,24 +488,29 @@ function SafetySection() {
   const ref = useScrollReveal();
   return (
     <section className="safety-home section" style={{ background: 'var(--canvas-soft)' }} aria-labelledby="safety-heading" ref={ref as any}>
-      <div className="container container-reading">
-        <div className="card-safety reveal-scale" style={{ padding: '40px', textAlign: 'center' }}>
-          <p className="eyebrow" style={{ marginBottom: '18px', color: 'var(--warning)' }}>Safety boundary</p>
-          <IconShield size={40} color="var(--warning)" aria-hidden="true" />
-          <h2 id="safety-heading" className="h3" style={{ marginTop: '20px', color: 'var(--warning)' }}>
-            This tool organizes questions. It does not answer medical questions.
-          </h2>
-          <p className="body-text reveal stagger-2" style={{ marginTop: '16px', color: 'var(--ink-muted)', maxWidth: '560px', margin: '16px auto 0' }}>
-            If your concern is health-related, this tool will help you prepare a clear question
-            for a qualified healthcare professional. It will not interpret your symptoms,
-            diagnose a condition, or recommend treatments.
-          </p>
-          <p className="body-text reveal stagger-3" style={{ marginTop: '16px', fontWeight: 600, color: 'var(--danger)' }}>
-            If you feel seriously unwell, stop using this tool and seek immediate local medical assistance.
-          </p>
-          <a href="/safety" className="btn btn-tertiary reveal stagger-4" style={{ marginTop: '16px' }}>
-            Read full safety information <IconArrowRight size={16} />
-          </a>
+      <div className="container safety-container">
+        <div className="safety-note reveal-scale">
+          <div className="safety-note-lead">
+            <span className="safety-note-index mono" aria-hidden="true">/ 02</span>
+            <p className="eyebrow safety-note-eyebrow">Safety boundary</p>
+            <IconShield size={38} color="var(--warning)" aria-hidden="true" />
+            <h2 id="safety-heading" className="h3 safety-note-title">
+              This tool organises questions. It does not answer medical questions.
+            </h2>
+          </div>
+          <div className="safety-note-body">
+            <p className="body-text">
+              If your concern is health-related, this tool helps you prepare a clear question
+              for a qualified healthcare professional. It does not interpret symptoms,
+              diagnose a condition, or recommend treatments.
+            </p>
+            <p className="safety-note-urgent">
+              If you feel seriously unwell, stop using this tool and seek immediate local medical assistance.
+            </p>
+            <a href="/safety" className="btn btn-tertiary safety-note-link">
+              Read full safety information <IconArrowRight size={16} />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -520,8 +525,8 @@ function FAQSection() {
   return (
     <section className="faq section" id="faq" aria-labelledby="faq-heading" ref={ref as any}>
       <div className="container container-reading">
-        <h2 id="faq-heading" className="h2 reveal" style={{ marginBottom: '48px' }}>
-          Frequently asked questions
+        <h2 id="faq-heading" className="h2 faq-title reveal" style={{ marginBottom: '48px' }}>
+          Questions, <span className="serif">answered plainly.</span>
         </h2>
         <div className="faq-list" role="list">
           {FAQ_ITEMS.map((item, i) => (

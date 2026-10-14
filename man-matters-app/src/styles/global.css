@@ -25,11 +25,12 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 400;
   line-height: var(--lh-body);
   color: var(--ink);
   background-color: var(--canvas);
-  background-image: none;
+  background-image: var(--paper-wash), var(--paper-grain);
+  background-size: 100% 100%, 11px 11px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -68,17 +69,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-.h1 { font-size: var(--text-h1); line-height: var(--lh-h1); font-weight: 700; letter-spacing: -0.045em; }
-.h2 { font-size: var(--text-h2); line-height: var(--lh-h2); font-weight: 700; letter-spacing: -0.04em; }
-.h3 { font-size: var(--text-h3); line-height: var(--lh-h3); font-weight: 600; }
-.lead { font-size: var(--text-lead); line-height: var(--lh-lead); font-weight: 430; }
-.body-text { font-size: var(--text-body); line-height: var(--lh-body); font-weight: 430; }
+.h1 { font-size: var(--text-h1); line-height: var(--lh-h1); font-weight: 700; letter-spacing: -0.05em; }
+.h2 { font-size: var(--text-h2); line-height: 0.98; font-weight: 700; letter-spacing: -0.052em; }
+.h3 { font-size: var(--text-h3); line-height: var(--lh-h3); font-weight: 600; letter-spacing: -0.025em; }
+.lead { font-size: var(--text-lead); line-height: var(--lh-lead); font-weight: 400; }
+.body-text { font-size: var(--text-body); line-height: var(--lh-body); font-weight: 400; }
 .label-text { font-size: var(--text-label); line-height: var(--lh-label); font-weight: 600; }
 .eyebrow {
   font-size: var(--text-eyebrow);
   line-height: var(--lh-eyebrow);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   font-family: var(--font-mono);
 }
@@ -161,7 +162,8 @@ a:hover { color: var(--forest-hover); text-decoration: underline; }
   border-radius: var(--radius-pill);
   font-family: var(--font-sans);
   font-size: var(--text-label);
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: -0.018em;
   line-height: 1.35;
   cursor: pointer;
   transition: all var(--duration-hover) var(--ease-out);
@@ -496,7 +498,8 @@ a:hover { color: var(--forest-hover); text-decoration: underline; }
   border: none;
   font-family: var(--font-sans);
   font-size: var(--text-body);
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: -0.018em;
   color: var(--ink);
   text-align: left;
   cursor: pointer;

@@ -111,6 +111,11 @@
   /* ─── Paper Texture ─── */
   --dot-grid: none;
   --dot-size: 22px;
+  --paper-wash:
+    radial-gradient(ellipse 58% 38% at -12% 8%, rgba(223, 224, 201, 0.7), transparent 72%),
+    radial-gradient(ellipse 46% 34% at 112% 26%, rgba(242, 223, 189, 0.52), transparent 72%),
+    linear-gradient(122deg, rgba(255, 255, 255, 0.7), rgba(246, 246, 244, 0));
+  --paper-grain: repeating-linear-gradient(112deg, rgba(46, 69, 55, 0.018) 0 1px, transparent 1px 7px);
 
   /* ─── 3D Perspective ─── */
   --perspective-hero: 1400px;
