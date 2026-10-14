@@ -1,0 +1,153 @@
+/* ============================================================
+   MAN MATTERS NEXT STEP — DESIGN TOKENS
+   Extracted from project design requirements.
+   ============================================================ */
+
+:root {
+  /* ─── Core Palette ─── */
+  --canvas: #f0ede4;
+  --canvas-soft: #fbf8f1;
+  --surface: #fffdf8;
+  --surface-sage: #dbe0c6;
+  --surface-sand: #f0c99e;
+  --surface-blue: #d5e1e0;
+  --ink: #1e211d;
+  --ink-muted: #68675d;
+  --forest: #2e4537;
+  --forest-hover: #1f3328;
+  --sage: #77855e;
+  --gold: #d6663d;
+  --line: #d8d1c5;
+  --focus: #98452c;
+  --info: #356b71;
+  --warning: #8a4d20;
+  --warning-bg: #fff0d6;
+  --danger: #a34331;
+  --danger-bg: #f9e3dc;
+  --success: #3d6546;
+
+  /* ─── Category Accents ─── */
+  --cat-product-bg: #E8F0EA;
+  --cat-product-accent: #39634F;
+  --cat-delivery-bg: #E5EEF3;
+  --cat-delivery-accent: #35677E;
+  --cat-packaging-bg: #EFE2C8;
+  --cat-packaging-accent: #8A6331;
+  --cat-consultation-bg: #E9E6F3;
+  --cat-consultation-accent: #66598A;
+  --cat-other-bg: #EEEDE8;
+  --cat-other-accent: #60655F;
+
+  /* ─── Typography ─── */
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+
+  /* Type Scale */
+  --text-display-xl: clamp(2.75rem, 7vw, 7.25rem);
+  --text-h1: clamp(2.25rem, 5.4vw, 5.75rem);
+  --text-h2: clamp(1.75rem, 4vw, 4rem);
+  --text-h3: clamp(1.35rem, 2.5vw, 2rem);
+  --text-lead: clamp(1.125rem, 1.5vw, 1.5rem);
+  --text-body: clamp(1rem, 1.1vw, 1.125rem);
+  --text-label: clamp(0.875rem, 1vw, 1rem);
+  --text-eyebrow: 0.75rem;
+
+  /* Line Heights */
+  --lh-display: 0.94;
+  --lh-h1: 0.98;
+  --lh-h2: 1.02;
+  --lh-h3: 1.15;
+  --lh-lead: 1.5;
+  --lh-body: 1.6;
+  --lh-label: 1.35;
+  --lh-eyebrow: 1.2;
+
+  /* ─── Spacing ─── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 112px;
+  --space-11: 144px;
+
+  /* Section Padding */
+  --section-pad-desktop: clamp(112px, 10vw, 144px);
+  --section-pad-tablet: clamp(72px, 8vw, 96px);
+  --section-pad-mobile: clamp(56px, 6vw, 72px);
+
+  /* ─── Containers ─── */
+  --container-marketing: 1440px;
+  --container-reading: 760px;
+  --container-form: 720px;
+  --container-summary: 1200px;
+  --page-pad: clamp(20px, 5vw, 80px);
+
+  /* ─── Radius ─── */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* ─── Shadows ─── */
+  --shadow-soft: 0 16px 44px rgba(45, 42, 31, 0.08);
+  --shadow-card: 0 5px 18px rgba(45, 42, 31, 0.07);
+  --shadow-lift: 0 28px 70px rgba(45, 42, 31, 0.16);
+  --shadow-3d: 14px 20px 52px rgba(45, 42, 31, 0.16);
+
+  /* ─── Borders ─── */
+  --border-standard: 1px solid var(--line);
+  --border-strong: 1px solid #9AA79F;
+  --border-selected: 2px solid var(--forest);
+  --border-dash: 1px dashed rgba(24, 32, 28, 0.15);
+  --border-dash-strong: 1px dashed rgba(24, 32, 28, 0.25);
+
+  /* ─── Paper Texture ─── */
+  --dot-grid: radial-gradient(circle, rgba(24, 32, 28, 0.06) 1px, transparent 1px);
+  --dot-size: 22px;
+
+  /* ─── 3D Perspective ─── */
+  --perspective-hero: 1400px;
+  --perspective-card: 1000px;
+
+  /* ─── Motion ─── */
+  --duration-hover: 160ms;
+  --duration-field: 200ms;
+  --duration-card: 420ms;
+  --duration-step: 340ms;
+  --duration-hero: 720ms;
+  --duration-modal: 280ms;
+  --duration-reveal: 1100ms;
+  --duration-section: 800ms;
+  --duration-stagger: 80ms;
+  --ease-out: ease-out;
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-hero: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* ─── Focus ─── */
+  --focus-ring: 0 0 0 2px var(--focus);
+  --focus-ring-offset: 0 0 0 4px var(--canvas), 0 0 0 6px var(--focus);
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-hover: 0ms;
+    --duration-field: 0ms;
+    --duration-card: 0ms;
+    --duration-step: 0ms;
+    --duration-hero: 0ms;
+    --duration-modal: 0ms;
+    --duration-reveal: 0ms;
+    --duration-section: 0ms;
+    --duration-stagger: 0ms;
+  }
+}

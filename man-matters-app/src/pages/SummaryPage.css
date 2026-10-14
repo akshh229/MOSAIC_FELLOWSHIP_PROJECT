@@ -1,0 +1,97 @@
+/* Summary Page Styles */
+.summary-page {
+  min-height: 100vh;
+  background: var(--canvas);
+  padding-top: 112px;
+  padding-bottom: 80px;
+}
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.summary-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 32px;
+  align-items: start;
+}
+.summary-left {}
+.summary-right {
+  position: sticky;
+  top: 100px;
+}
+
+/* Summary Textarea */
+.summary-textarea {
+  width: 100%;
+  min-height: 360px;
+  padding: 20px;
+  border: var(--border-standard);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--canvas-soft);
+  resize: vertical;
+  transition: border-color var(--duration-field) var(--ease-out);
+}
+.summary-textarea:focus {
+  outline: none;
+  border-color: var(--focus);
+  box-shadow: 0 0 0 2px rgba(23, 105, 170, 0.2);
+}
+
+/* Export Actions */
+.summary-export-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.btn-copied {
+  background: var(--success) !important;
+}
+
+/* Meta Actions */
+.summary-meta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: var(--border-standard);
+}
+
+/* Print-only content */
+.print-only {
+  display: none;
+}
+@media print {
+  .print-only { display: block; }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .summary-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .summary-right {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .summary-page {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+  .summary-textarea {
+    min-height: 250px;
+    font-size: 0.85rem;
+  }
+}

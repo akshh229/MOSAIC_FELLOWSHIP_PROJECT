@@ -1,0 +1,44 @@
+/* Shared Info Page Styles (Privacy, Safety, About) */
+.info-page {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background: var(--canvas);
+  min-height: 100vh;
+}
+.info-title {
+  max-width: 600px;
+}
+.info-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.info-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.info-check-item svg,
+.info-check-item span:first-child {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.info-list {
+  padding-left: 20px;
+  color: var(--ink-muted);
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.info-list li {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 767px) {
+  .info-page {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+}
